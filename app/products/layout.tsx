@@ -8,15 +8,7 @@ export const metadata: Metadata = {
 };
 
 function BlogLayout({ children }: any) {
-  return (
-    <div
-      style={{
-        backgroundColor: "lightgrey",
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 }
 
 export default BlogLayout;
