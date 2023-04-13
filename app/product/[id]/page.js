@@ -7,6 +7,7 @@ async function getProductDetails(id) {
 }
 
 export default async function ProductDetails({ params }) {
+  console.log("Vidhya req ", req);
   const product = await getProductDetails(params.id);
 
   return (
