@@ -9,7 +9,6 @@ async function getProductDetails(id) {
 export default async function ProductModal({ params }) {
   const product = await getProductDetails(params.id);
 
-  console.log("vidhya");
   return (
     <Modal>
       <ProductCard product={product} />
