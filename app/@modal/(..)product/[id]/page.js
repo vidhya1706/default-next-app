@@ -11,7 +11,10 @@ export default async function ProductModal({ params }) {
 
   return (
     <Modal>
-      <ProductCard product={product} />
+      <div className="w-full">
+        <h3>Product details</h3>
+        <ProductCard product={product} />
+      </div>
     </Modal>
   );
 }

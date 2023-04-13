@@ -16,7 +16,7 @@ export default async function ProductDetails({ params }) {
 
   return (
     <div className="container mx-auto my-10">
-      <div className="w-1/2 mx-auto border border-gray-700">
+      <div className="w-[300px] mx-auto border border-gray-700">
         <ProductCard product={product} />
       </div>
     </div>
