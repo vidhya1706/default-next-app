@@ -6,8 +6,12 @@ async function getProductDetails(id) {
   return res.json();
 }
 
+export async function generateMetadata({ params }) {
+  const product = await getProductDetails(params.id);
+  return { title: product.title };
+}
+
 export default async function ProductDetails({ params }) {
-  console.log("Vidhya req ", req);
   const product = await getProductDetails(params.id);
 
   return (
