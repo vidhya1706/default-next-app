@@ -1,3 +1,5 @@
+import ProductCard from "../components/ProductCard";
+
 async function getProductListing() {
   const res = await fetch("https://fakestoreapi.com/products");
   return res.json();
@@ -10,12 +12,7 @@ const ProductListing = async () => {
     <div>
       <h3>Products available</h3>
       {products.map((product: any) => (
-        <div key={product.id}>
-          <p>{product.title}</p>
-          <p>{product.description}</p>
-          <p>Category: {product.category}</p>
-          <hr />
-        </div>
+        <ProductCard key={product.id} product={product} enableNavigation />
       ))}
     </div>
   );

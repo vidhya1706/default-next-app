@@ -1,17 +1,15 @@
-async function getProductDetails() {
-  const res = await fetch("https://fakestoreapi.com/products/1");
+import ProductCard from "../../components/ProductCard";
+
+async function getProductDetails(id: string) {
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
   return res.json();
 }
 
-const BlogDetails = async () => {
-  const product = await getProductDetails();
+const BlogDetails = async ({ params }: { params: { id: string } }) => {
+  console.log("Vidhya params ", params);
+  const product = await getProductDetails(params.id);
   return (
-    <div key={product.id}>
-      <p>{product.title}</p>
-      <p>{product.description}</p>
-      <p>Category: {product.category}</p>
-      <hr />
-    </div>
+    <ProductCard key={product.id} product={product} enableNavigation={false} />
   );
 };
 
